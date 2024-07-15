@@ -4,3 +4,6 @@
 ### Launch project
 #### npm install
 #### npm run dev
+
+### Result
+##### https://test-vue-pagination.netlify.app/
