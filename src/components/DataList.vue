@@ -30,7 +30,7 @@ const paginatedItems = computed(() => {
 }
 .data-list {
   max-width: 800px;
-  margin: 80px auto 0;
+  margin: 80px auto;
   list-style-type: none;
   padding: 0;
   display: flex;
