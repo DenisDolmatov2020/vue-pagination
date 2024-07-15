@@ -1,6 +1,5 @@
 <template>
   <div class="pagination">
-
     <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1">&lt;</button>
 
     <button
@@ -22,8 +21,8 @@
 
     <button
         v-if="totalPages > 1"
-        :class="{ active: currentPage === totalPages }"
         @click="goToPage(totalPages)"
+        :class="{ active: currentPage === totalPages }"
     >{{ totalPages }}</button>
     <button
         @click="goToPage(currentPage + 1)"
@@ -43,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue'
+import { computed } from 'vue'
 import { usePaginationStore } from '../stores/pagination'
 
 const store = usePaginationStore()
@@ -61,13 +60,10 @@ const goToPage = (page: number) => {
 const updateItemsPerPage = (event: Event) => {
   const target = event.target as HTMLSelectElement
   store.setItemsPerPage(Number(target.value))
-}
-
-watch(itemsPerPage, () => {
   if (currentPage.value > totalPages.value) {
     store.setPage(totalPages.value)
   }
-})
+}
 
 // Logic for displaying pages with ellipsis
 const visiblePages = computed(() => {
