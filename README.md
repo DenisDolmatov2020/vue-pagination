@@ -1,2 +1,6 @@
 # vue-pagination
- Test vite vue 3 TS 
+ Test Vite Vue 3 TS with Pinia
+
+### Launch project
+#### npm install
+#### npm run dev
