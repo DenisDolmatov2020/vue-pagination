@@ -10,7 +10,8 @@ import { usePaginationStore } from '../stores/pagination'
 
 const store = usePaginationStore()
 
-const items = Array.from({ length: 100 }, (v, k) => ({ id: k + 1, name: `Item ${k + 1}` }))
+const items = Array.from({ length: 100 }, (_, k) => ({ id: k + 1, name: `Item ${k + 1}` }))
+store.setTotalItems(items.length)
 
 const paginatedItems = computed(() => {
   const start = (store.currentPage - 1) * store.itemsPerPage

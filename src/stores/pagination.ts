@@ -4,7 +4,7 @@ export const usePaginationStore = defineStore('pagination', {
     state: () => ({
         currentPage: 1,
         itemsPerPage: 10,
-        totalItems: 100,
+        totalItems: 10
     }),
     getters: {
         totalPages: (state) => Math.ceil(state.totalItems / state.itemsPerPage),
@@ -19,5 +19,8 @@ export const usePaginationStore = defineStore('pagination', {
                 this.currentPage = this.totalPages
             }
         },
+        setTotalItems(total: number) {
+            this.totalItems = total
+        }
     },
 })
